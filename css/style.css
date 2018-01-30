@@ -1,0 +1,9 @@
+nav li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.sender {
+    margin: 20px 0px 0px 20px;
+}
