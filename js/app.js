@@ -6,7 +6,8 @@
         let income_inp = document.querySelector("input[name='income']");
         let outcome_inp = document.querySelector("input[name='outcome']");
 
-        if(income_inp.value) {
+
+        if(income_inp.value.match(/^\d+$|^\d+\.\d+$/)) {
             let data_income = {
                 'type': 'income',
                 'amount': income_inp.value,
@@ -16,9 +17,12 @@
             }
 
             db_api.add(data_income);
+            story.addItem(data_income);
+        } else {
+            document.getElementById('err').innerHTML = 'Ошибка или доход не задан';
         }
 
-        if(outcome_inp.value) {
+        if(outcome_inp.value.match(/^\d+$|^\d+\.\d+$/)) {
             let data_outcome = {
                 'type': 'outcome',
                 'amount': outcome_inp.value,
@@ -28,9 +32,11 @@
             }
 
             db_api.add(data_outcome);
+            story.addItem(data_outcome);
+        } else {
+            document.getElementById('err').innerHTML = 'Ошибка или расход не задан';
         }
 
-        document.getElementById('info').innerHTML = window.localStorage.getItem('redexp_data');
     }
 
     let btn = document.querySelector("input[type='submit']");
