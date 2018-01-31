@@ -13,7 +13,7 @@ const story = {
         amount.setAttribute('class', 'story_cell');
         date.setAttribute('class', 'story_cell');
         type.innerHTML = data.type;
-        amount.innerHTML = data.amount;
+        amount.innerHTML = +data.amount;
         date.innerHTML = data.date.toLocaleDateString();
 
         item.appendChild(type);

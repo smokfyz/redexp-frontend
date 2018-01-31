@@ -31,3 +31,10 @@ nav li {
     background-color: #DDD;
     height: 100px;
 }
+
+#footer > p {
+    float: right;
+    position: relative;
+    margin: 0px 10px 0px 0px;
+    top: 80px;
+}

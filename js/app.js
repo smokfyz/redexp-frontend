@@ -2,7 +2,7 @@
 
     function sendHandler(event) {
         event.preventDefault();
-        console.log('good');
+
         let income_inp = document.querySelector("input[name='income']");
         let outcome_inp = document.querySelector("input[name='outcome']");
 
@@ -18,8 +18,6 @@
 
             db_api.add(data_income);
             story.addItem(data_income);
-        } else {
-            document.getElementById('err').innerHTML = 'Ошибка или доход не задан';
         }
 
         if(outcome_inp.value.match(/^\d+$|^\d+\.\d+$/)) {
@@ -33,10 +31,7 @@
 
             db_api.add(data_outcome);
             story.addItem(data_outcome);
-        } else {
-            document.getElementById('err').innerHTML = 'Ошибка или расход не задан';
         }
-
     }
 
     let btn = document.querySelector("input[type='submit']");
