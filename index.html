@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>RedExp</title>
@@ -16,12 +16,16 @@
     </nav>
 
     <div class="sender">
-        <form>
-            <input type="text" placeholder="Доход">
-            <input type="text" placeholder="Расход">
+        <form id="sender">
+            <input type="text" placeholder="Доход" name="income">
+            <input type="text" placeholder="Расход" name="outcome">
             <input type="submit" value="Save">
         </form>
     </div>
 
+    <p id="info"></p>
+
+    <script src="js/db_api.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
