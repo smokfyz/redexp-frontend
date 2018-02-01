@@ -19,25 +19,25 @@
         <div class="clearfix">
             <div id="sender">
                 <form>
-                    <input type="radio" name="type" value="income"> Доход
+                    <input type="radio" name="type" value="income" required> Доход
                     <input type="radio" name="type" value="outcome"> Расход<br>
-                    <input type="text" name="amount" placeholder="Сумма"><br>Валюта:
+                    <input type="text" name="amount" placeholder="Сумма" required><br>Валюта:
                     <select>
                         <option>Рубли</option>
                         <option>Доллары</option>
                     </select><br>
                     Причина:<br>
                     <textarea name="reason"></textarea><br>
-                    <input type="button" value="Add">
+                    <input type="submit" value="Add">
                 </form>
             </div>
 
             <div id="story">
                 <div class="story_row">
-                    <div class="story_cell">Type</div>
-                    <div class="story_cell">Amount</div>
-                    <div class="story_cell">Date</div>
-                    <div class="story_cell">Reason</div>
+                    <div class="story_cell">Тип транзакции</div>
+                    <div class="story_cell">Сумма</div>
+                    <div class="story_cell">Дата</div>
+                    <div class="story_cell">Причина</div>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
         <p id="err"></p>
 
         <footer id="footer">
-            <p>RedExp - version 0.01a</p>
+            <p>RedExp - version 0.02a</p>
         </footer>
     </div>
 

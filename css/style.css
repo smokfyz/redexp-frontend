@@ -1,6 +1,6 @@
 #app {
-    width: 90%;
-    margin: auto;
+    width: 1200px;
+    margin: 15px auto;
     box-shadow: 1px 1px 5px 0 black;
 }
 
@@ -16,27 +16,37 @@ nav {
 }
 
 nav .pick {
-    background: #FFE073;
-    font-weight: 600;
+    background: #AFAAFA;
 }
 
 nav ul {
     padding: 0;
     margin: 0;
     font-family: Arial;
-    font-size: 14px;
+    font-size: 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 nav li {
     padding: 5px 10px 5px 10px;
     list-style-type: none;
     display: inline-block;
+    font-size: 14px;
+}
+
+nav li:hover {
+    background: #AFAAFA;
+    cursor: pointer;
 }
 
 #sender {
     width: 25%;
     height: 100%;
-    margin: 30px 0 0 0;
+    margin: 15px 0 0 0;
     padding: 10px 0 0 2%;
     float: right;
     border-left: 1px solid #eee;
@@ -85,9 +95,10 @@ input[type="text"] {
     height: 60px;
     width: 90%;
     color: #cccccc;
-    padding-left: 5px;
+    padding-left: 5px 0 0 5px;
     font-size: 11px;
     font-family: Tahoma;
+    margin: 5px 0 5px 0;
 }
 
 #sender textarea:focus {
@@ -99,6 +110,7 @@ input[type="text"] {
     display: table;
     border-collapse: collapse;
     width: 70%;
+    max-width: 900px;
 }
 
 .story_row {
@@ -106,6 +118,7 @@ input[type="text"] {
 }
 
 .story_cell {
+    width: 25%;
     display: table-cell;
     padding: 2px;
     border: 1px solid #dbdbdb;
