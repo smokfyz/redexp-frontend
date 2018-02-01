@@ -6,36 +6,45 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="app">
+        <nav>
+            <ul>
+                <li>История</li>
+                <li>Статистика</li>
+                <li>О приложении</li>
+            </ul>
+        </nav>
+        <div class="clearfix">
+            <div id="sender">
+                <form>
+                    <input type="radio" name="type" value="income"> Доход
+                    <input type="radio" name="type" value="outcome"> Расход<br>
+                    <input type="text" name="amount" placeholder="Сумма"><br>Валюта:
+                    <select>
+                        <option>Рубли</option>
+                        <option>Доллары</option>
+                    </select><br>
+                    Причина<br>
+                    <textarea></textarea><br>
+                    <input type="submit" value="Save">
+                </form>
+            </div>
 
-    <nav>
-        <ul>
-            <li>История</li>
-            <li>Статистика</li>
-            <li>О приложении</li>
-        </ul>
-    </nav>
-
-    <div class="sender">
-        <form id="sender">
-            <input type="text" placeholder="Доход" name="income">
-            <input type="text" placeholder="Расход" name="outcome">
-            <input type="submit" value="Save">
-        </form>
-    </div>
-
-    <p id="err"></p>
-    <div id="story">
-        <div class="story_row">
-            <div class="story_cell">Type</div>
-            <div class="story_cell">Amount</div>
-            <div class="story_cell">Date</div>
+            <div id="story">
+                <div class="story_row">
+                    <div class="story_cell">Type</div>
+                    <div class="story_cell">Amount</div>
+                    <div class="story_cell">Date</div>
+                </div>
+            </div>
         </div>
+        <p>Total: <span id="total"></span></p>
+        <p id="err"></p>
+
+        <footer id="footer">
+            <p>RedExp - version 0.01a</p>
+        </footer>
     </div>
-
-    <footer id="footer">
-        <p>RedExp - version 0.01a</p>
-    </footer>
-
     <script src="js/db_api.js"></script>
     <script src="js/story.js"></script>
     <script src="js/app.js"></script>

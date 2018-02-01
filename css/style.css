@@ -1,20 +1,46 @@
-body {
-    margin: 0px;
+#app {
+    width: 90%;
+    border: 1px solid black;
+    margin: auto;
+}
+
+nav {
+    background: #EEE;
+}
+
+nav ul {
+    padding: 5px 0px 5px 20px;
+    margin: 0;
+    font-family: Arial;
+    font-size: 14px;
 }
 
 nav li {
     list-style-type: none;
     display: inline-block;
-    margin-right: 30px;
+    margin-right: 15px;
 }
 
-.sender {
-    margin: 20px 0px 0px 20px;
+#sender {
+    width: 20%;
+    margin: 20px 0 0 0;
+    float: right;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#sender textarea {
+    resize: none;
 }
 
 #story {
     display: table;
-    margin: 20px;
+    border-collapse: collapse;
+    width: 70%;
 }
 
 .story_row {
@@ -23,8 +49,9 @@ nav li {
 
 .story_cell {
     display: table-cell;
-    padding: 10px;
-    width: 100px;
+    padding: 2px;
+    border: 1px solid grey;
+    text-align: center;
 }
 
 #footer {
