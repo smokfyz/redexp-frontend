@@ -1,30 +1,7 @@
 #app {
     width: 90%;
-    border: 1px solid black;
     margin: auto;
-}
-
-nav {
-    background: #EEE;
-}
-
-nav ul {
-    padding: 5px 0px 5px 20px;
-    margin: 0;
-    font-family: Arial;
-    font-size: 14px;
-}
-
-nav li {
-    list-style-type: none;
-    display: inline-block;
-    margin-right: 15px;
-}
-
-#sender {
-    width: 20%;
-    margin: 20px 0 0 0;
-    float: right;
+    box-shadow: 1px 1px 5px 0 black;
 }
 
 .clearfix:after {
@@ -33,8 +10,89 @@ nav li {
     display: block;
 }
 
+nav {
+    background: #7B72D8;
+    color: #120873;
+}
+
+nav .pick {
+    background: #FFE073;
+    font-weight: 600;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+nav li {
+    padding: 5px 10px 5px 10px;
+    list-style-type: none;
+    display: inline-block;
+}
+
+#sender {
+    width: 25%;
+    height: 100%;
+    margin: 30px 0 0 0;
+    padding: 10px 0 0 2%;
+    float: right;
+    border-left: 1px solid #eee;
+}
+
+#sender input {
+    margin-bottom: 10px;
+}
+
+input[type="text"]:focus {
+    color: #000000;
+    border: 1px solid #000000
+}
+
+input[type="text"] {
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    background: #ffffff !important;
+    outline: none;
+    height: 24px;
+    width: 90%;
+    color: #cccccc;
+    padding-left: 5px;
+    font-size: 11px;
+    font-family: Tahoma;
+}
+
+#sender select {
+    margin-bottom: 10px;
+}
+
 #sender textarea {
     resize: none;
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    background: #ffffff !important;
+    outline: none;
+    height: 60px;
+    width: 90%;
+    color: #cccccc;
+    padding-left: 5px;
+    font-size: 11px;
+    font-family: Tahoma;
+}
+
+#sender textarea:focus {
+    color: #000000;
+    border: 1px solid #000000
 }
 
 #story {
@@ -50,7 +108,7 @@ nav li {
 .story_cell {
     display: table-cell;
     padding: 2px;
-    border: 1px solid grey;
+    border: 1px solid #dbdbdb;
     text-align: center;
 }
 
