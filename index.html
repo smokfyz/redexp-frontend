@@ -14,7 +14,8 @@
                 <li>Статистика</li>
                 <li>О приложении</li>
             </ul>
-        </nav>
+
+                </nav>
 
         <div class="clearfix">
             <div id="sender">
@@ -22,31 +23,37 @@
                     <input type="radio" name="type" value="income" required> Доход
                     <input type="radio" name="type" value="outcome"> Расход<br>
                     <input type="text" name="amount" placeholder="Сумма" required><br>Валюта:
-                    <select>
-                        <option>Рубли</option>
-                        <option>Доллары</option>
+                    <select name="currency">
+                        <option value="rub">Рубли</option>
+                        <option value="usd">Доллары</option>
+                        <option value="eur">Евро</option>
                     </select><br>
                     Причина:<br>
                     <textarea name="reason"></textarea><br>
-                    <input type="submit" value="Add">
+                    <input type="button" value="Add">
                 </form>
             </div>
 
-            <div id="story">
-                <div class="story_row">
-                    <div class="story_cell">Тип транзакции</div>
-                    <div class="story_cell">Сумма</div>
-                    <div class="story_cell">Дата</div>
-                    <div class="story_cell">Причина</div>
+            <div class="overflow">
+                <div id="story">
+                    <div class="story_row">
+                        <div class="story_cell header">Тип транзакции</div>
+                        <div class="story_cell header">Сумма</div>
+                        <div class="story_cell header">Дата</div>
+                        <div class="story_cell header">Причина</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <p>Total: <span id="total"></span></p>
-        <p id="err"></p>
+        <div id="totals">
+            <p>Рубли: <span id="total_rub"></span></p>
+            <p>Доллары: <span id="total_usd"></span></p>
+            <p>Евро: <span id="total_eur"></span></p>
+        </div>
 
         <footer id="footer">
-            <p>RedExp - version 0.02a</p>
+            <p>RedExp - version 0.10a</p>
         </footer>
     </div>
 

@@ -3,40 +3,30 @@
     function sendHandler(event) {
         event.preventDefault();
 
-        let income_inp = document.querySelector("input[name='income']");
-        let outcome_inp = document.querySelector("input[name='outcome']");
+        let type = document.querySelector("input[name='type']:checked");
+        let amount = document.querySelector("input[name='amount']").value;
+        let currencies = document.querySelector("select[name='currency']");
+        let currency = currencies.options[currencies.selectedIndex].value;
+        let reason = document.querySelector("textarea[name='reason']").value;
 
-
-        if(income_inp.value.match(/^\d+$|^\d+\.\d+$/)) {
-            let data_income = {
-                'type': 'income',
-                'amount': income_inp.value,
-                'currency': 'rub',
-                'date': new Date(),
-                'reason': 'Test'
-            }
-
-            db_api.add(data_income);
-            story.addItem(data_income);
+        let data = {
+            type: type.value,
+            amount: amount,
+            currency: currency,
+            date: new Date(),
+            reason: reason
         }
 
-        if(outcome_inp.value.match(/^\d+$|^\d+\.\d+$/)) {
-            let data_outcome = {
-                'type': 'outcome',
-                'amount': outcome_inp.value,
-                'currency': 'rub',
-                'date': new Date(),
-                'reason': 'Test'
-            }
+        db_api.add(data);
+        story.addItem(data);
+        story.countTotal(data);
 
-            db_api.add(data_outcome);
-            story.addItem(data_outcome);
-        }
     }
 
-    let btn = document.querySelector("input[type='submit']");
+    let btn = document.querySelector("input[type='button']");
     btn.addEventListener('click', sendHandler);
 
-    window.localStorage.removeItem('redexp_data');
+    window.localStorage.clear();
+    story.countTotal();
 
 }());
