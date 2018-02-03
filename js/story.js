@@ -16,14 +16,14 @@ const story = {
         reason.setAttribute('class', 'story_cell');
         type.innerHTML = data.type ===  'income' ? 'Доход' : 'Расход';
         amount.innerHTML = +data.amount;
-        date.innerHTML = data.date.toLocaleDateString();
+        date.innerHTML = new Date(data.date).toLocaleDateString();
         reason.innerHTML = data.reason;
 
         item.appendChild(type);
         item.appendChild(amount);
         item.appendChild(date);
         item.appendChild(reason);
-        storyTable.insertBefore(item, storyTable.children[1]);
+        storyTable.appendChild(item);
     },
 
     countTotal: function(data) {

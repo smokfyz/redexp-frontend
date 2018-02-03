@@ -11,7 +11,7 @@ const db_api = {
         body = body.substring(1, body.length);
 
         xhr.onload = function() {
-            alert( JSON.parse(this.responseText) );
+            console.log(JSON.parse(this.responseText));
         }
 
         xhr.onerror = function() {
@@ -24,6 +24,18 @@ const db_api = {
     get: function() {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', 'http://localhost:3000/transactions', true);
-    }
 
+        xhr.onload = function() {
+            document.getElementById('floatingCirclesG').style.display = 'none';
+            for(let item of JSON.parse(this.responseText)) {
+                story.addItem(item);
+            }
+        }
+
+        xhr.onerror = function() {
+            alert( 'Ошибка ' + this.status );
+        }
+
+        xhr.send();
+    }
 }

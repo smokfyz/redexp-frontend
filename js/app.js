@@ -23,10 +23,35 @@
 
     }
 
-    let btn = document.querySelector("input[type='button']");
-    btn.addEventListener('click', sendHandler);
+    function loginHandler() {
+        let cover = document.createElement('div');
+        let reg_form = document.createElement('div');
+        cover.id = 'cover-div';
+        reg_form.id = 'login-form';
+        reg_form.style.display = 'block';
+        reg_form.onclick = (e) => e.stopPropagation();
+        cover.onclick = () => document.body.removeChild(cover);
+        cover.appendChild(reg_form);
+        document.body.appendChild(cover);
+    }
+
+    function signinHandler() {
+        let cover = document.createElement('div');
+        let reg_form = document.createElement('div');
+        cover.id = 'cover-div';
+        reg_form.id = 'signin-form';
+        reg_form.style.display = 'block';
+        reg_form.onclick = (e) => e.stopPropagation();
+        cover.onclick = () => document.body.removeChild(cover);
+        cover.appendChild(reg_form);
+        document.body.appendChild(cover);
+    }
+
+    document.querySelector("input[type='button']").addEventListener('click', sendHandler);
+    document.getElementById("login").addEventListener('click', loginHandler);
+    document.getElementById("signin").addEventListener('click', signinHandler);
 
     window.localStorage.clear();
-    story.countTotal();
+    db_api.get();
 
 }());
