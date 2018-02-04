@@ -25,25 +25,41 @@
 
     function loginHandler() {
         let cover = document.createElement('div');
-        let reg_form = document.createElement('div');
+        let log_div = document.createElement('div');
+        let log_form = `<form method='POST'>
+            <p>Login</p>
+            <input type='text' name='login' required></input>
+            <p>Password</p>
+            <input type='password' name='password' required></input>
+            <input type='submit' value='Login'></input>
+        </form>`
         cover.id = 'cover-div';
-        reg_form.id = 'login-form';
-        reg_form.style.display = 'block';
-        reg_form.onclick = (e) => e.stopPropagation();
+        log_div.id = 'login-div';
+        log_div.innerHTML = log_form;
+        log_div.onclick = (e) => e.stopPropagation();
         cover.onclick = () => document.body.removeChild(cover);
-        cover.appendChild(reg_form);
+        cover.appendChild(log_div);
         document.body.appendChild(cover);
     }
 
     function signinHandler() {
         let cover = document.createElement('div');
-        let reg_form = document.createElement('div');
+        let reg_div = document.createElement('div');
+        let signin_form = `<form method='POST'>
+            <p>Login</p>
+            <input type='text' name='login' required></input>
+            <p>Password</p>
+            <input type='password' name='password' required></input>
+            <p>Confirm password</p>
+            <input type='password' name='conf_password' required></input>
+            <input type='submit' value='Sign in'></input>
+        </form>`
         cover.id = 'cover-div';
-        reg_form.id = 'signin-form';
-        reg_form.style.display = 'block';
-        reg_form.onclick = (e) => e.stopPropagation();
+        reg_div.id = 'signin-div';
+        reg_div.innerHTML = signin_form;
+        reg_div.onclick = (e) => e.stopPropagation();
         cover.onclick = () => document.body.removeChild(cover);
-        cover.appendChild(reg_form);
+        cover.appendChild(reg_div);
         document.body.appendChild(cover);
     }
 

@@ -6,7 +6,7 @@ body {
     width: 1200px;
     margin: 15px auto;
     box-shadow: 1px 1px 5px 0 black;
-    background: #EFEFEF;
+    background: #fafafa;
     font-family: Arial;
     font-size: 14px;
 }
@@ -65,7 +65,7 @@ nav li:hover {
     width: 25%;
     height: 100%;
     margin: 15px 0 0 0;
-    padding: 10px 0 0 2%;
+    padding: 10px 10px 0 2%;
     float: right;
     border-left: 1px solid #eee;
 }
@@ -74,12 +74,12 @@ nav li:hover {
     margin-bottom: 10px;
 }
 
-input[type="text"]:focus {
+#sender input[type="text"]:focus {
     color: #000000;
     border: 1px solid #000000
 }
 
-input[type="text"] {
+#sender input[type="text"] {
     border: 1px solid #cccccc;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -183,24 +183,62 @@ input[type="text"] {
     align-content: center;
 }
 
-#login-form {
+#login-div {
     margin: auto;
     width: 400px;
     height: 200px;
     border-radius: 3px;
     background: #FFF;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     z-index: 200;
 }
 
-#signin-form {
+#signin-div {
     margin: auto;
     width: 400px;
     height: 500px;
     border-radius: 3px;
     background: #FFF;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     z-index: 200;
+}
+
+#cover-div form {
+    display: block;
+    width: 300px;
+    margin: auto;
+}
+
+#cover-div p {
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+#cover-div input[type='text'], #cover-div input[type='password'] {
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    background: #ffffff !important;
+    outline: none;
+    height: 24px;
+    width: 90%;
+    color: #000;
+    padding-left: 5px;
+    font-size: 11px;
+    font-family: Tahoma;
+    margin: 0 0 10px 0;
+}
+
+#signin-div input[type='text']:focus, #login-div input[type='text']:focus, #signin-div input[type='password']:focus, #login-div input[type='password']:focus {
+    color: #000000;
+    border: 1px solid #000000
 }
 
 #floatingCirclesG{
