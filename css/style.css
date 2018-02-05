@@ -152,6 +152,7 @@ nav li:hover {
 
 #totals {
     margin: 30px 0 10px 30px;
+    font-size: 12px;
 }
 
 #totals > p {
