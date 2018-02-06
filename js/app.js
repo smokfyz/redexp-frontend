@@ -28,7 +28,7 @@
         let log_div = document.createElement('div');
         let log_form = `<form method='POST'>
             <p>Login</p>
-            <input type='text' name='login' required></input>
+            <input type='text' name='username' required></input>
             <p>Password</p>
             <input type='password' name='password' required></input>
             <input type='submit' value='Login'></input>
@@ -40,26 +40,35 @@
         cover.onclick = () => document.body.removeChild(cover);
         cover.appendChild(log_div);
         document.body.appendChild(cover);
+
+        document.querySelector("input[value='Login']").onclick = (e) => {
+            e.preventDefault();
+            data = {
+                username: document.querySelector("input[name='username']").value,
+                password: document.querySelector("input[name='password']").value
+            }
+            db_api.login(data);
+        }
     }
 
     function signinHandler() {
         let cover = document.createElement('div');
-        let reg_div = document.createElement('div');
+        let signin_div = document.createElement('div');
         let signin_form = `<form method='POST'>
             <p>Login</p>
-            <input type='text' name='login' required></input>
+            <input type='text' name='username' required></input>
             <p>Password</p>
             <input type='password' name='password' required></input>
             <p>Confirm password</p>
-            <input type='password' name='conf_password' required></input>
+            <input type='password' name='password_conf' required></input>
             <input type='submit' value='Sign in'></input>
         </form>`
         cover.id = 'cover-div';
-        reg_div.id = 'signin-div';
-        reg_div.innerHTML = signin_form;
-        reg_div.onclick = (e) => e.stopPropagation();
+        signin_div.id = 'signin-div';
+        signin_div.innerHTML = signin_form;
+        signin_div.onclick = (e) => e.stopPropagation();
         cover.onclick = () => document.body.removeChild(cover);
-        cover.appendChild(reg_div);
+        cover.appendChild(signin_div);
         document.body.appendChild(cover);
     }
 

@@ -37,5 +37,27 @@ const db_api = {
         }
 
         xhr.send();
+    },
+
+    login: function(data) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://localhost:3000/login', true);
+        xhr.withCredentials = true;
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        let body = '';
+        for(let key in data) {
+            body += '&' + key + '=' + encodeURIComponent(data[key]);
+        }
+        body = body.substring(1, body.length);
+
+        xhr.onload = function() {
+            console.log(JSON.parse(this.responseText));
+        }
+
+        xhr.onerror = function() {
+            alert( 'Ошибка ' + this.status );
+        }
+
+        xhr.send(body);
     }
 }
